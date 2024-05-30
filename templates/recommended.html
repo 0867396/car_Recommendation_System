@@ -9,8 +9,9 @@
 </head>
 
 <body>
-    <h1>Aanbevolen voertuigen</h1>
-    <div class="container">
+    
+    <div class="container_recommended">
+        <h1>Aanbevolen voertuigen</h1>
         {% for car in recommended_vehicles %}
         <div class="card">
             <img src="{{ url_for('static', filename='images/car.png') }}" alt="Car Image">

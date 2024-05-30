@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h2>Beantwoord de vragen</h2>
-    <div class="container">
+    
+    <div class="container_dropdown">
+        <h2>Beantwoord de vragen</h2>
         <form action="/analyze_dropdown" method="post">
             <label for="budget">Wat is uw voornaamste gebruik van de auto?</label>
             <select name="usage" id="usage">
