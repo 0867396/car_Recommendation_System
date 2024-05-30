@@ -3,6 +3,7 @@ sql_details = {
     'user': 'admin',
     'password': 'test1234',
     'database': "vehicle_db"
+    
 }
 
 
