@@ -4,11 +4,28 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: auto; /* Ensures the body can scroll */
+    background-image: url(../images/car_black.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
 }
 
 h1, h2 {
     text-align: center;
-    margin: 20px 0;
+    margin: 20px;
+
+}
+
+#h1_index{
+    padding-top: 30px;
+    color:whitesmoke
 }
 
 button, input[type="submit"] {
@@ -17,7 +34,7 @@ button, input[type="submit"] {
     margin: 10px auto;
     padding: 10px;
     font-size: 16px;
-    background-color: #007BFF;
+    background-color: #363636;
     color: white;
     border: none;
     border-radius: 5px;
@@ -45,13 +62,36 @@ label {
     text-align: left;
 }
 
-.container_index, .container_description, .container_recommended, .container_dropdown {
+textarea{text-align: left;}
+
+.container_index, .container_description, .container_recommended{
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(218, 215, 215, 0.438);
+    background-color: #adb3b993;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    overflow: auto; /* Ensures the container can scroll if content overflows */
+
+}
+
+.container_dropdown {
     width: 70%;
     margin: auto;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #adb3b993;
 }
+.container_dropdown select{
+    text-align: left;
+}
+
 
 /* Kaart stijlen */
 .card {
