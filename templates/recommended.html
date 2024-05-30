@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Vehicles</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>Aanbevolen voertuigen</h1>
+    <div class="container">
+        {% for car in recommended_vehicles %}
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/car.png') }}" alt="Car Image">
+            <div class="card-details">
+                <p><strong>{{ car[1] }}</strong></p>
+                <p>Prijs: {{ car[3] }}</p>
+                <p>Jaar: {{ car[4] }}</p>
+                <p>Kilometerstand: {{ car[5] }}</p>
+                <p>Brandstoftype: {{ car[6] }}</p>
+                <p>Overdragen: {{ car[7] }}</p>
+                <p>Locatie: {{ car[8] }}</p>
+                <p>Kleur: {{ car[9] }}</p>
+                <p>Type eigenaar: {{ car[10] }}</p>
+                <p>Body Type: {{ car[11] }}</p>
+                <p>Motorvermogen: {{ car[12] }}</p>
+                <p>Lengte: {{ car[13] }}</p>
+                <p>Breed: {{ car[14] }}</p>
+                <p>Hoogte: {{ car[15] }}</p>
+                <p>Zitcapaciteit: {{ car[16] }}</p>
+                <p>Kofferruimte: {{ car[17] }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

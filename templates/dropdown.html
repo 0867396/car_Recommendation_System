@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Search - Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>Beantwoord de vragen</h2>
+    <div class="container">
+        <form action="/analyze_dropdown" method="post">
+            <label for="budget">Wat is uw voornaamste gebruik van de auto?</label>
+            <select name="usage" id="usage">
+                <option value="daily_commute">Dagelijks woon-werkverkeer</option>
+                <option value="family_outings">Familie-uitjes</option>
+                <option value="offroad">Off-road rijden</option>
+                <option value="business">Zakelijke doeleinden</option>
+                <option value="leisure_sport">Vrije tijd en sport</option>
+            </select>
+            <br>
+            <label for="usage">Hoeveel mensen moet u doorgaans vervoeren?</label>
+            <select name="passengers" id="passengers">
+                <option value="myself">Gewoon mezelf</option>
+                <option value="1_2_passengers">1-2 passagiers</option>
+                <option value="3_4_passengers">3-4 passagiers</option>
+                <option value="more_than_4_passengers">Meer dan 4 passagiers</option>
+            </select>
+            <br>
+            <label for="experience">Wat is uw favoriete rijervaring?</label>
+            <select name="experience" id="experience">
+                <option value="smooth_comfortable">Soepel en comfortabel</option>
+                <option value="sporty_fast">Sportief en snel</option>
+                <option value="rugged_adventurous">Robuust en avontuurlijk</option>
+                <option value="eco_friendly">Milieuvriendelijk en efficiënt</option>
+            </select>
+            <br>
+            <label for="efficiency">Hoe belangrijk is brandstofefficiëntie voor u?</label>
+            <select name="efficiency" id="efficiency">
+                <option value="very_important">Zeer belangrijk</option>
+                <option value="somewhat_important">Redelijk belangrijk</option>
+                <option value="not_important">Niet erg belangrijk</option>
+                <option value="not_at_all_important">Helemaal niet belangrijk</option>
+            </select>
+            <br>
+            <label for="terrain">Op welk soort terrein rijd je meestal?</label>
+            <select name="terrain" id="terrain">
+                <option value="city_streets">Stadsstraten</option>
+                <option value="highways">Snelwegen</option>
+                <option value="rural_roads">Landelijke wegen</option>
+                <option value="offroad_paths">Offroad-paden</option>
+            </select>
+            <br>
+            <label for="cargo">Hoeveel laadruimte heb je nodig?</label>
+            <select name="cargo" id="cargo">
+                <option value="minimal">Minimaal, alleen voor kleine items</option>
+                <option value="moderate">Matig, voor boodschappen en af ​​en toe bagage</option>
+                <option value="large">Groot, voor sportuitrusting of frequent reizen</option>
+                <option value="maximal">Maximaal, voor het verplaatsen van grote voorwerpen of veel spullen</option>
+            </select>
+            <br>
+            <label for="safety">Hoe belangrijk zijn geavanceerde veiligheidsvoorzieningen voor u?</label>
+            <select name="safety" id="safety">
+                <option value="very_important">Heel belangrijk</option>
+                <option value="somewhat_important">Enigszins belangrijk</option>
+                <option value="not_important">Niet erg belangrijk</option>
+                <option value="not_at_all_important">Helemaal niet belangrijk</option>
+            </select>
+            <br>
+            <label for="transmission">Heeft u de voorkeur aan een bepaald type transmissie?</label>
+            <select name="transmission" id="transmission">
+                <option value="automatic">Automatisch</option>
+                <option value="manual">Handmatig</option>
+                <option value="no_preference">Geen voorkeur</option>
+            </select>
+            <br>
+            <label for="long_trips">Hoe vaak bent u van plan de auto te gebruiken voor lange autoritten?</label>
+            <select name="long_trips" id="long_trips">
+                <option value="often">Vaak</option>
+                <option value="occasionally">Af en toe</option>
+                <option value="rarely">Zelden</option>
+                <option value="never">Nooit</option>
+            </select>
+            <br>
+            <label for="profession">Wat is uw beroep?</label>
+            <select name="profession" id="profession">
+                <option value="office_worker">Kantoormedewerker</option>
+                <option value="tradesperson">Handelaar (bijvoorbeeld loodgieter, elektricien)</option>
+                <option value="sales_marketing">Verkoop/marketing</option>
+                <option value="healthcare_professional">Beroepsbeoefenaar in de gezondheidszorg</option>
+                <option value="other">Anders</option>
+            </select>
+            <br>
+            <label for="business_travel">Heeft u uw auto nodig voor zakelijke reizen?</label>
+            <select name="business_travel" id="business_travel">
+                <option value="often">Ja, vaak</option>
+                <option value="occasionally">Af en toe</option>
+                <option value="rarely">Zelden</option>
+                <option value="never">Nooit</option>
+            </select>
+            <br>
+            <label for="tech_preference">Hoe belangrijk zijn de interieurtechnologie en connectiviteit van de auto?</label>
+            <select name="tech_preference" id="tech_preference">
+                <option value="very_important">Heel belangrijk</option>
+                <option value="somewhat_important">Redelijk belangrijk</option>
+                <option value="not_important">Niet erg belangrijk</option>
+                <option value="not_at_all_important">Helemaal niet belangrijk</option>
+            </select>
+            <br>
+            <label for="towing">Heeft u een auto nodig met trekvermogen?</label>
+            <select name="towing" id="towing">
+                <option value="often">Ja, vaak</option>
+                <option value="occasionally">Af en toe</option>
+                <option value="rarely">Zelden</option>
+                <option value="never">Nooit</option>
+            </select>
+            <br>
+            <label for="ev_interest">Wat vindt u van elektrische of hybride voertuigen?</label>
+            <select name="ev_interest" id="ev_interest">
+                <option value="very_interested">Zeer geïnteresseerd</option>
+                <option value="somewhat_interested">Enigszins geïnteresseerd</option>
+                <option value="not_interested">Niet geïnteresseerd</option>
+                <option value="against">Tegen</option>
+            </select>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
