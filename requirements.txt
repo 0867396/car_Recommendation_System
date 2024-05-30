@@ -2,6 +2,6 @@ Flask
 Gunicorn
 python-dotenv
 psycopg2-binary
-sklearn
+scikit-learn
 mysql-connector-python
 json
