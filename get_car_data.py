@@ -42,7 +42,7 @@ def get_data_by_label(label):
     vehicle_ids = get_vehicle_id_by_labelid(label_id)
     
     result = []
-    for vehicle_id in vehicle_ids:
+    for vehicle_id in vehicle_ids[:10]:
         result.extend(get_car_by_id(vehicle_id[0]))
 
     return result

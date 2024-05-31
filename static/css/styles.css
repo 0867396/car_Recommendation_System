@@ -81,12 +81,15 @@ textarea{text-align: left;}
 }
 
 .container_recommended{
-    width: 90%;
+    width: 80%;
     margin: auto;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #adb3b993;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
    
 }
 
@@ -102,11 +105,14 @@ textarea{text-align: left;}
     text-align: left;
 }
 
-
+.container_recommended h1 {
+    width: 100%;
+}
 /* Kaart stijlen */
 .card {
-    display: flex;
-    flex-wrap: wrap;
+    
+    
+    
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 10px;
