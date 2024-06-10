@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Vehicles</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <div class="container_recommended">
+        <h1>Aanbevolen voertuigen</h1>
+        <br>
+        {% set count = namespace(value=1)%}
+        {% for id in history_ids %}
+            <button onclick="window.location.href='/get_history/{{id}}'">{{count.value}}</button>
+            {% set count.value = count.value + 1 %}
+        {% endfor %}
+    </div>
+</body>
+
+
+</html>
