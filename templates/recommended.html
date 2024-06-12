@@ -18,7 +18,6 @@
             <img src="{{ url_for('static', filename='images/car.png') }}" alt="Car Image">
             <div class="card-details">
                 <p><strong>{{ car[1] }}</strong></p>
-                <p>Prijs: {{ car[3] }}</p>
                 <p>Jaar: {{ car[4] }}</p>
                 <p>Kilometerstand: {{ car[5] }}</p>
                 <p>Brandstoftype: {{ car[6] }}</p>
@@ -37,6 +36,9 @@
         </div>
         {% endfor %}
     </div>
+    <footer>
+        <p>Rojeeh Abdulhannan &#169;</p>
+    </footer>
 </body>
 
 </html>

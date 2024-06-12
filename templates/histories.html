@@ -8,16 +8,19 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-
+    <img src="../static/images/leaf.png" id="logo">
     <div class="container_recommended">
         <h1>Aanbevolen voertuigen</h1>
         <br>
         {% set count = namespace(value=1)%}
         {% for id in history_ids %}
-            <button onclick="window.location.href='/get_history/{{id}}'">{{count.value}}</button>
+            <button onclick="window.location.href='/get_history/{{id}}'">Zoek {{count.value}}</button>
             {% set count.value = count.value + 1 %}
         {% endfor %}
     </div>
+    <footer>
+        <p>Rojeeh Abdulhannan &#169;</p>
+    </footer>
 </body>
 
 
