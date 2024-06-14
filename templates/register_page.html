@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Car Search</title>
+    <title>Register Page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <img src="../static/images/leaf.png" id="logo">
     <h1 id="h1_login">Car Recommendation System - Register</h1>
     <div class="container_login">
-        <img src="../static/images/Avatar.png">
-        <label for="username" class="label-login">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="password" class="label-login">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button id= "button-login" type="submit">Register</button>
+        <form action="/register" method="post"></form>
+            <img src="../static/images/Avatar.png">
+            <label for="username" class="label-login">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password" class="label-login">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button id= "button-login" type="submit">Register</button>
         </form>
     </div>
-    <footer>
-        <p>Rojeeh Abdulhannan &#169;</p>
-    </footer>
+    <div id="footer">
+        <footer>
+            <p>Rojeeh Abdulhannan &#169;</p>
+        </footer>
+    </div>
 </body>
 </html>
