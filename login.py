@@ -46,6 +46,14 @@ def store_user(username, password):
     conn = create_connection()
     if conn.is_connected():
         cursor = conn.cursor()
+
+        sql = f'select * from user where username = "{username}"'
+        cursor = conn.cursor()
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        if len(result) != 0:
+            return False
+        
         query = f'''INSERT INTO user(username, password, salt)
                     VALUES (%s, %s, %s);'''
 

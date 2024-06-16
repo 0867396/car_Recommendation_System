@@ -10,7 +10,10 @@
     <img src="../static/images/leaf.png" id="logo">
     <h1 id="h1_login">Car Recommendation System - Register</h1>
     <div class="container_login">
-        <form action="/register" method="post"></form>
+        {% if error %}
+        <p >{{error}}</p>
+        {% endif %}
+        <form action="/register" method="POST">
             <img src="../static/images/Avatar.png">
             <label for="username" class="label-login">Username:</label>
             <input type="text" id="username" name="username" required>

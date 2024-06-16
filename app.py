@@ -3,13 +3,16 @@ from prediction import get_label_prediction
 from get_car_data import get_data_by_label, save_history, save_vehicle_history, get_history_username, get_all_vehicle_ids_from_history_id, get_car_by_id
 from login import store_user, check_password
 
-app = Flask(__name__)
 app = Flask(__name__, static_url_path='/static')  #creates a Flask application instance named app
 app.secret_key = 'your_secret_key'
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    print(session)
+    if 'user' not in session:
+        return render_template('index.html')
+    else:
+        return redirect(url_for('home'))
 
 @app.route('/home')
 def home():
@@ -21,7 +24,7 @@ def home():
 
 @app.route('/register-page')
 def register_page():
-    return render_template('register_page.html')
+    return render_template('register_page.html', error="")
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -29,9 +32,12 @@ def register():
     password = request.form['password']
 
     if username != "" and password != "":
-        store_user(username, password)
+        result = store_user(username, password)
+        if result == False:
+            return render_template('register_page.html', error="Username already exist!")
+
         return redirect(url_for('index'))
-    return render_template('register_page.html')
+    return render_template('register_page.html', error="Username and password cannot be empty!")
 
 @app.route('/login-page')
 def login_page():
