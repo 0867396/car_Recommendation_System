@@ -54,6 +54,12 @@ def loging():
 
     return render_template('login_page.html')
 
+
+@app.route('/logout', methods=['POST'])
+def logout():
+    session.pop('user', None)
+    return redirect(url_for('index'))
+
 @app.route('/history')
 def history_page():
     history_ids = get_history_username(session['user'])
@@ -119,7 +125,7 @@ def analyze_dropdown():
     recommended_vehicles = get_data_by_label(predicted_label[0])
 
     if 'user' in session:
-        historyid = save_history(recommended_vehicles, session['user'])
+        historyid = save_history(session['user'])
         save_vehicle_history(historyid,recommended_vehicles)
 
     return render_template('recommended.html', recommended_vehicles=recommended_vehicles)
